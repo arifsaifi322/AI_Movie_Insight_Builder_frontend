@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Book Details</title>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; padding: 24px; }
+      .card { border: 1px solid #ddd; padding: 16px; border-radius: 8px; max-width: 560px }
+      .label { font-weight: 600; color: #333 }
+      .value { margin-bottom: 8px }
+      a { display:inline-block; margin-top:12px }
+    </style>
+  </head>
+  <body>
+    <h1>Book Details</h1>
+    <div id="root"></div>
+    <script>
+      function qs(name){
+        const params = new URLSearchParams(location.search);
+        return params.get(name);
+      }
+
+      const id = qs('id') || '';
+
+      // Mock data for demo. Replace with real API calls as needed.
+      const books = {
+        '1': { id:'1', name:'The Great Gatsby', author:'F. Scott Fitzgerald', year:1925, publisher:'Scribner' },
+        '2': { id:'2', name:'1984', author:'George Orwell', year:1949, publisher:'Secker & Warburg' },
+        'abc': { id:'abc', name:'Example Book', author:'Jane Doe', year:2020, publisher:'Acme' }
+      };
+
+      const root = document.getElementById('root');
+
+      if (!id) {
+        root.innerHTML = '<div class="card"><div class="label">No Book Id provided.</div><div>Go back and enter an Id.</div><a href="/">Back</a></div>';
+      } else {
+        const b = books[id];
+        if (!b) {
+          root.innerHTML = `<div class="card"><div class="label">No details found for id: ${id}</div><a href="/">Back</a></div>`;
+        } else {
+          root.innerHTML = `<div class="card"><div class="value"><span class="label">Id:</span> ${b.id}</div><div class="value"><span class="label">Name:</span> ${b.name}</div><div class="value"><span class="label">Author:</span> ${b.author}</div><div class="value"><span class="label">Year:</span> ${b.year}</div><div class="value"><span class="label">Publisher:</span> ${b.publisher}</div><a href="/">Back</a></div>`;
+        }
+      }
+    </script>
+  </body>
+</html>
