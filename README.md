@@ -1,9 +1,14 @@
 # 🎬 AI Movie Insight Builder
 
-AI Movie Insight Builder is a web application that analyzes audience sentiment for movies using real IMDb reviews.
-Users can enter an IMDb Movie ID and receive structured information including movie details, audience reviews, and an AI-generated sentiment summary.
+AI Movie Insight Builder is a full-stack web application that analyzes **audience sentiment from IMDb reviews** and generates an **AI-powered summary**.
 
-The project demonstrates full-stack development with a React frontend, Node.js backend, web scraping, and AI-based text summarization.
+Users can enter an IMDb movie ID and instantly see:
+
+• Movie details
+• Audience reviews
+• AI-generated sentiment analysis
+
+The project demonstrates **full-stack development, web scraping, and AI integration**.
 
 ---
 
@@ -23,20 +28,15 @@ https://github.com/arifsaifi322/AI_Movie_Insight_Builder_-backend-
 
 ---
 
-# ⚠️ Important (Render Free Tier Notice)
+# ⚠️ Render Free Tier Notice
 
-Both the frontend and backend are hosted on Render free tier.
+Both frontend and backend are deployed on **Render free tier**.
 
-Render free services automatically go into **sleep mode after inactivity**.
-Because of this, the backend may take **30–60 seconds to wake up**.
+Render automatically **puts services to sleep after inactivity**, so the backend may take **30–60 seconds to wake up**.
 
-### Before testing the app
-
-First start the backend by opening this URL in your browser:
+To start the backend service first, open:
 
 https://ai-movie-insight-builder-backend-t2bh.onrender.com/movie/tt4154756
-
-This wakes up the backend service.
 
 Then open the frontend:
 
@@ -44,12 +44,12 @@ https://ai-movie-insight-builder-frontend.onrender.com/
 
 ---
 
-# 🧪 How to Use the Application
+# 🧪 How to Use
 
-1. Open the frontend application.
-2. Enter an **IMDb Movie ID** in the search box.
+1. Open the frontend application
+2. Enter an **IMDb Movie ID**
 
-Example Movie IDs
+Example IDs
 
 ```
 tt4154756
@@ -57,20 +57,19 @@ tt1375666
 tt0468569
 ```
 
-3. Click search.
+3. Click search
 
 The application will display:
 
-• Movie details
-• Cast information
-• Audience reviews from IMDb
-• AI generated audience sentiment summary
+• Movie information
+• Audience reviews
+• AI sentiment summary
 
 ---
 
 # ⚙️ Setup Instructions
 
-## 1. Clone Frontend
+## Clone Frontend
 
 ```bash
 git clone https://github.com/arifsaifi322/AI_Movie_Insight_Builder_frontend.git
@@ -83,43 +82,16 @@ Install dependencies
 npm install
 ```
 
-Run the development server
+Run development server
 
 ```bash
 npm run dev
 ```
 
-Frontend will run on
+Frontend runs on
 
 ```
 http://localhost:5173
-```
-
----
-
-## 2. Clone Backend
-
-```bash
-git clone https://github.com/arifsaifi322/AI_Movie_Insight_Builder_-backend-.git
-cd AI_Movie_Insight_Builder_-backend-
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Start the backend server
-
-```bash
-node server.js
-```
-
-Backend will run on
-
-```
-http://localhost:5000
 ```
 
 ---
@@ -128,40 +100,69 @@ http://localhost:5000
 
 Frontend
 
-* React
-* Vite
-* CSS
+• React
+• Vite
+• CSS
 
 Backend
 
-* Node.js
-* Express.js
+• Node.js
+• Express.js
 
-Data & APIs
+Data
 
-* OMDb API (movie information)
-* IMDb review scraping
+• OMDb API
+• IMDb review scraping
 
 AI
 
-* AI-based summarization for audience sentiment analysis
+• OpenAI-compatible API for sentiment analysis
 
 Deployment
 
-* Render (frontend + backend)
+• Render
 
 ---
 
-# 🤔 Tech Stack Rationale
+# 🤔 Technology Choices & Rationale
 
-React was used to build a responsive and interactive user interface.
-Vite was chosen for fast development builds and modern frontend tooling.
+### Why React + Vite
 
-Node.js and Express were selected for backend development due to their efficiency in handling API requests and web scraping.
+React was chosen for building a **dynamic and interactive UI**.
 
-The OMDb API provides structured movie metadata, while IMDb review scraping allows collection of real audience opinions.
+Vite was selected because it provides:
 
-AI summarization is used to convert multiple audience reviews into a concise sentiment summary for easier interpretation.
+• Extremely fast development builds
+• Modern JavaScript tooling
+• Simpler configuration compared to older bundlers
+
+I am currently **not deeply familiar with Next.js**, so using React + Vite allowed faster development and clearer control over the frontend architecture.
+
+---
+
+### Why Node.js + Express Backend
+
+Node.js and Express were used because they provide:
+
+• Simple REST API development
+• Excellent support for scraping and external APIs
+• Easy integration with AI services
+
+---
+
+### Why Render for Deployment
+
+This project is deployed using **Render**.
+
+The main reason is that I currently have **more practical experience deploying applications on Render** compared to platforms such as AWS.
+
+Render provides:
+
+• Simple GitHub integration
+• Easy backend deployment
+• Free tier hosting for personal projects
+
+While I am still learning **AWS and other cloud services**, Render allowed me to quickly deploy and test the full application.
 
 ---
 
@@ -175,7 +176,7 @@ Node.js Backend API
 ↓
 IMDb Reviews + OMDb API
 ↓
-AI Sentiment Summary
+AI Sentiment Analysis
 ↓
 Frontend Display
 
@@ -183,20 +184,20 @@ Frontend Display
 
 # 📌 Assumptions
 
-• Users provide valid IMDb movie IDs.
-• IMDb page structure remains consistent for scraping reviews.
-• OMDb API remains available and stable.
-• AI summarization API is available for generating sentiment insights.
+• Users provide valid IMDb IDs
+• IMDb review structure remains relatively stable
+• OMDb API remains available
+• AI API returns responses in the expected format
 
 ---
 
 # 🚀 Future Improvements
 
-• Add rating visualization and charts
+• Add rating visualization charts
 • Improve AI sentiment accuracy
-• Cache scraped reviews for faster performance
-• Add trending movie analysis
-• Deploy frontend on Vercel for faster performance
+• Cache reviews in a database
+• Add trending movie insights
+• Deploy frontend on Vercel for faster CDN delivery
 
 ---
 
